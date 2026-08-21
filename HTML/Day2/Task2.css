@@ -1,0 +1,19 @@
+.Story{
+    color:red;
+}
+#title{
+    width: fit-content;
+    border-bottom: 4px #000000 solid;
+    font-size: 35px;
+    margin: auto;
+}
+div{
+    text-align: center;
+}
+article{
+    margin:40px;
+}
+cite{
+    color:red;
+    font-weight: bolder;
+}
