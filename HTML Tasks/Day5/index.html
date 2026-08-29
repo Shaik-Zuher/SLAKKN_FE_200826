@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 4</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Assignment 4</h1>
+    </header>
+    <main>
+        <section class="task">
+            <h1>Task1- Student Details Page</h1>
+                <article class="inner">
+                    <h3>As Unordered List</h3>
+                    <div class="details">
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Javascript</li>
+                            <li>React</li>
+                            <li>Node.js</li>
+                        </ul>
+                    </div>
+                    <h3>As Ordered List</h3>
+                    <div class="details">
+                        <ol>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Javascript</li>
+                            <li>React</li>
+                            <li>Node.js</li>
+                        </ol>
+                    </div>
+                    <h3>As Table</h3>
+                    <div class="details">
+                        <table>
+                            <thead><tr><th>Name</th><th>Age</th> <th>Course</th> <th>Marks</th></tr></thead>
+                            <tbody>
+                                <tr><td>Arun</td><td>22</td><td>Fullstack</td><td>85</td></tr>
+                                <tr><td>Priya</td><td>23</td><td>Java</td><td>90</td></tr>
+                                <tr><td>Kumar</td><td>21</td><td>Python</td><td>75</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+        </section>
+
+        <section class="task">
+            <h1>Task 2 - Student Registration Form</h1>
+            <article class="inner">
+                <h3>Enter the information</h3>
+                <hr>
+                <form action="">
+                    <fieldset>
+                        <label for="name">Enter Your name:</label>
+                        <input type="text" id="name" required>
+                        <label for="age">Enter Your Age:</label>
+                        <input type="number" id="age" required>
+                        <label for="email">Enter Your email:</label>
+                        <input type="email" id="email" required>
+                        <label for="address">Enter Your Address:</label>
+                        <textarea name="address" id="address"></textarea>
+                        <label for="Gender">Gender:</label>
+                        <div>
+                            <input type="radio" name="Sex" id="Gender">Male
+                            <input type="radio" name="Sex" id="Gender" >Female
+                        </div>
+                        <label for="password">Enter Your password:</label>
+                        <input type="password" id="password" required>
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" >                     
+                    </fieldset>
+                    <fieldset>
+                        <label for="course">Select Your Course</label>
+                            <select name="Course" id="course">
+                                <optgroup>
+                                    <option value="fs">Fullstack</option>
+                                    <option value="da">Data Analytics</option>
+                                    <option value="cc">Cloud Computing</option>
+                                </optgroup>
+                            </select>
+                        <label for="skills">Check Your Skills:</label>
+                        <div>
+                            <input type="checkbox">HTML
+                            <input type="checkbox">CSS
+                            <input type="checkbox">Javascript
+                        </div>
+                    </fieldset>
+                    <div class="btns">
+                        <button id="reset">Reset</button>
+                        <input type="submit" id="submit">
+                    </div>
+                </form>
+            </article>
+        </section>
+        <section class="task">
+            <h1>Task 3 - Mini Product Page</h1>
+            <div>
+                    <h4>Laptop</h4>
+                    <p>Price: ₹55,000</p>
+                    <p>Features:</p>
+                    <ul>
+                        <li>16GB RAM</li>
+                        <li>512GB SSD</li>
+                        <li>Intel Processor</li>
+                        <li>15.6-inch Display</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Product Specifications:</h4>
+
+                    <table border="1">
+                        <tr>
+                            <th>Specification</th>
+                            <th>Details</th>
+                        </tr>
+                        <tr>
+                            <td>RAM</td>
+                            <td>16GB</td>
+                        </tr>
+                        <tr>
+                            <td>Storage</td>
+                            <td>512GB SSD</td>
+                        </tr>
+                        <tr>
+                            <td>Processor</td>
+                            <td>Intel Processor</td>
+                        </tr>
+                        <tr>
+                            <td>Display</td>
+                            <td>15.6-inch</td>
+                        </tr>
+                        <tr>
+                            <td>Price</td>
+                            <td>₹55,000</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h3>Order Form</h3>
+
+                    <form>
+                        <fieldset>
+                        <label for="name">Customer Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <br><br>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <br><br>
+
+                        <label for="phone">Phone:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <br><br>
+
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" required>
+                        <br><br>
+
+                        <label for="add">Address:</label>
+                        <textarea id="add" name="address" rows="4" cols="30" required></textarea>
+                        <br><br>
+                        </fieldset>
+                        <button type="submit">Order</button>
+                    </form>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
