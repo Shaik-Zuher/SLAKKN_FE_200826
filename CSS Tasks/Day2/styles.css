@@ -1,0 +1,40 @@
+*{
+    margin:0;
+}
+.title {
+    color: white;
+    background-color:rgb(98, 150, 206);
+}
+.section {
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.section-title {
+    color: darkblue;
+}
+
+.teacher {
+    color: green;
+}
+
+.student {
+    color: purple;
+}
+
+.topic {
+    color: #000000;
+}
+
+.status {
+    color: white;
+}
+option[value="Started"]{
+    color:black;
+}
+option[value="Inprogress"]{
+    color:Green;
+}
+option[value="Completed"]{
+    color:red;
+}
