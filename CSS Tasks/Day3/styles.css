@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 20px;
+    background: #d1e3eb;
+    background: linear-gradient(90deg, rgba(209, 227, 235, 1) 0%, rgba(155, 168, 160, 1) 50%, rgba(181, 179, 163, 1) 100%);;
+}
+div{
+  background-color:whitesmoke;
+  border-radius: 20px;
+  padding:10px;
+  padding-left: 40px;
+}
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+h2, p {
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #333;
+}
+
+.details {
+    color: green;
+    font-size: 18px;
+}
+
+#student-name {
+    color: red;
+    font-weight: bold;
+}
+
+#skills {
+    color: purple;
+}
