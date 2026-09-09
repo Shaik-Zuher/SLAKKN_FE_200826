@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #F7F9F3;
+    color: #263238;
+    font-family: Arial, sans-serif;
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #2E7D32;
+    padding: 10px 20px;
+}
+
+header h1 {
+    margin: 0;
+    color: white;
+    background: #2E7D32;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+    background: #1B5E20;
+}
+
+nav a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background-color: #C8E6C9;
+    color: #263238;
+}
+
+.task {
+    background-color: #C8E6C9;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #263238;
+    border-radius: 5px;
+    margin: auto;
+    padding:10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.task h1 {
+    text-align: center;
+    background-color: #C8E6C9;
+}
+
+.inner {
+    padding: 20px;
+    text-align: center;
+    background-color: #F7F9F3;
+    border-radius: 10px;
+}
+button{
+    background-color:#2E7D32;
+    color: #F7F9F3;
+    height:60px;
+    width: 120px;
+    border-radius: 5px;
+}
+button:hover{
+    background-color: #C8E6C9;
+    color:black;
+}
+a{
+    text-decoration: none;
+    color: #263238;
+}
+.login{
+    background-color: red;
+}
+.register{
+    background-color: yellow;
+    color:black;
+}
+.login:hover{
+    background-color:rgb(235, 147, 147);
+    color:black;
+    border:4px solid black;
+}
+.register:hover{
+    background-color: yellowgreen;
+    color:#F7F9F3;
+    border:4px solid black;  
+}
+.contact:hover{
+    background-color: #C8E6C9;
+    color:black;
+    border:4px solid black;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding:10px;
+    border-right: 1px solid #263238;
+}
+.details{
+    border: 1px solid black;
+    border-radius: 5px;
+    display:flex;
+    width: 100%;
+    justify-content: space-between;
+}
+figure{
+    background-color: white;
+    margin: 0px;
+}
+#task2 figure:hover{
+    transform: scale(1.07);
+    border:1px solid black;
+    transition: ease-in 1s;
+    opacity:0.8;
+}
+.cards img{
+    width:100%;
+    height: 100%;
+
+}
+.cards figure{
+    height: 50%;
+    margin-top:-42px;
+}
+.cards{
+    display: flex;
+    height:500px;
+    gap:10px;
+    width: 100%;
+}
+.card{
+    height: 100%;
+    width:350px;
+    background-color:grey;
+    display: inherit;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch;
+    border-radius: 4px;
+
+}
+.card:hover{
+    box-shadow: 3px 3px 15px 3px;
+    transform: translateY(-5px);
+    transition: all 1s;
+    background-color: #C8E6C9;
+}
