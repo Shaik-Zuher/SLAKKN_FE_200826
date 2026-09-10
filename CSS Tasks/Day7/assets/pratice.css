@@ -22,10 +22,12 @@ main{
     display: flex;
     flex-direction: column;
     box-shadow: 3px 3px 15px -5px;
+    transition: ease-in-out 0.7s;
+    
+
 }
 .box:hover{
     transform: translateY(-20px);
-    transition: ease-in 0.7s;
     box-shadow: 3px 3px 15px 3px;
 
 }
@@ -38,7 +40,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
+    font-size: 50px; 
 }
 
 .paint{
@@ -51,6 +53,10 @@ main{
 }
 p{
     margin: 10px 0px;
+    
+}
+.txt{
+    height: 70px;
 }
 .btn{
     background: linear-gradient(90deg,rgba(142, 2, 241, 0.688),rgba(112, 7, 187, 0.742));
