@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .parent{
+            width:100%;
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: red;
+        }
+        .box{
+            border-radius: 50%;
+            width:400px;
+            height:400px;
+            background-color: white;
+        }
+        @media(max-width:1000px) {
+            .parent{
+                background-color:blue;
+            }
+            
+        }
+        @media(max-width:700px) {
+            .parent{
+                background-color: green;
+            }
+            
+        }
+        @media(max-width:520px) {
+            .parent{
+                background-color: yellow;
+            }
+        
+        }
+        @media(prefers-color-scheme: dark){
+            .parent{
+                background-color: black;
+            }
+            .box{
+                animation-name: anime;
+                animation-timing-function: ease-in-out;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+            }
+        }
+        @keyframes anime{
+            50%{
+                box-shadow:yellow 5px 5px 30px 5px ;
+            }
+            100%{
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="box">
+        </div>
+    </div>
+</body>
+</html>
