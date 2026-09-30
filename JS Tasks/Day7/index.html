@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Non primitive Data Types</title>
+
+        <link rel="stylesheet" href="../assets/styles.css">
+    </head>
+
+    <body>
+
+        <header class="main-header">
+        <h1>Non Primitive Data Types</h1>
+
+        <nav>
+            <a href="#task1">Task</a>
+        </nav>
+        </header>
+        <section class="task" id="task1">
+            <h1 style="text-align: center;">Check the Console or hit "CTRL+SHIFT+J"</a></h1>
+        </section>
+        <script>
+           // TASK 1
+            let fruits=["apple","orange","banana","jam","guava"];
+            console.log(fruits);
+            console.log(fruits[1],fruits[3],fruits[fruits.length-1]);
+            // TASK 2
+            let colors = ["Red", "Blue", "Green", "Yellow"];
+            colors[1]="Black";
+            console.log(colors);
+            // TASK 3
+            let s=["Arun","Kumar","Priya","Ravi","Divya"];
+            for(var i of s){
+                console.log(i)
+            }
+            // TASK 4
+            let marks = [80, 70, 90, 60, 85];
+            s=0;
+            for(var i of marks){
+                s+=i;
+            }
+            console.log("Total",s)
+            // TASK 5
+            let numbers = [2, 4, 6, 8, 10];
+            for(var i of numbers){
+                console.log(i*2);
+            }
+            //Task 6
+            let hp={"name":"Z","age":22,"course":"FS","city":"KKD"}
+            console.log(hp["name"],hp["course"]);
+            //Task 7
+            hp={"name":"Arun","salary":25000,"role":"Developer"}
+            hp["salary"]=30000;
+            console.log(hp);
+            //Task 8
+            let product = {
+                name: "Laptop",
+                price: 50000
+            };
+            product["brand"]="Delhi";
+            console.log(product);
+            //Task 9
+            let car = {
+                brand: "Toyota",
+                model: "Fortuner",
+                year: 2025
+            };
+            for(var i in car){
+                console.log(i,car[i]);
+            }
+            //Task 10
+            let students = [
+                {
+                    name: "Arun",
+                    mark: 80
+                },
+                {
+                    name: "Priya",
+                    mark: 90
+                },
+                {
+                    name: "Kumar",
+                    mark: 75
+                }
+            ];
+            for(var i of students){
+                console.log(i["name"],"-",i["mark"])
+            };
+        </script>
+    </body>
+</html>
