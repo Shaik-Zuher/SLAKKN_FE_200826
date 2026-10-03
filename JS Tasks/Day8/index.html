@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Functions</title>
+
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <h1>JavaScript Functions</h1>
+
+        <nav>
+            <a href="#task1">Tasks</a>
+        </nav>
+    </header>
+
+    <section class="task" id="task1">
+        <h1 style="text-align: center;">
+            Check the Console or press CTRL + SHIFT + J
+        </h1>
+    </section>
+
+    <script>
+
+        // TASK 1 - EVEN OR ODD
+
+        function checkEvenOdd(number) {
+
+            if (number % 2 === 0) {
+                return "Even Number";
+            } else {
+                return "Odd Number";
+            }
+
+        }
+
+        console.log(checkEvenOdd(10));
+
+
+        // TASK 2 - LARGEST OF TWO NUMBERS
+
+        function findLargest(a, b) {
+
+            if (a > b) {
+                return a;
+            } else {
+                return b;
+            }
+
+        }
+
+        console.log(findLargest(25, 40));
+
+
+        // TASK 3 - VOTING ELIGIBILITY
+
+        function checkVote(age) {
+
+            if (age >= 18) {
+                return "Eligible to Vote";
+            } else {
+                return "Not Eligible to Vote";
+            }
+
+        }
+
+        console.log(checkVote(20));
+
+
+        // TASK 4 - SUM OF ARRAY
+
+        function getTotal(numbers) {
+
+            let total = 0;
+
+            for (let i = 0; i < numbers.length; i++) {
+                total += numbers[i];
+            }
+
+            return total;
+        }
+
+        let marks = [10, 20, 30, 40, 50];
+
+        console.log(getTotal(marks));
+
+
+        // TASK 5 - COUNT EVEN NUMBERS
+
+        const countEven=(numbers)=>{
+
+            let count = 0;
+
+            for (let i = 0; i < numbers.length; i++) {
+
+                if (numbers[i] % 2 === 0) {
+                    count++;
+                }
+
+            }
+
+            return count;
+        }
+
+        let numbers = [10, 15, 20, 25, 30, 35, 40];
+
+        console.log(countEven(numbers));
+
+    </script>
+
+</body>
+</html>
