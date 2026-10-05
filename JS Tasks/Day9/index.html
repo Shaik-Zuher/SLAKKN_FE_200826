@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Functions</title>
+
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <h1>JavaScript Functions</h1>
+
+        <nav>
+            <a href="#task1">Tasks</a>
+        </nav>
+    </header>
+
+    <section class="task" id="task1">
+        <h1 style="text-align: center;">
+            Check the Console or press CTRL + SHIFT + J
+        </h1>
+    </section>
+
+    <script>
+        //Task1
+        let company="ABC Technologies";
+        function showEmployee(){
+            let employee="Arun";
+
+        }
+        showEmployee();
+        console.log("company-Global Scope");
+        console.log("employee-Function Scope");
+        console.log("Because employee had block scope and is being used within function");
+        //Task2
+        if(1){
+            var age=25;
+            var city="Chennai"
+
+        }
+        console.log(age,city);
+        //Task3
+        console.log("Hosting");
+        console.log(a);
+        var a=20;
+        console.log(b);
+        var b=10;
+        console.log(greet());
+        function greet(){
+            return "Welcome to Javascript";
+        }
+
+        //Task4
+        const Counter=()=>{
+            let count=0;
+            const inner=()=>{
+                count++;
+                return count;
+            }
+            return inner;
+        };
+        let  ans=Counter();
+        console.log(ans());
+        console.log(ans());
+        console.log(ans());
+
+        //task5
+        const add=(a,b)=>{
+            return a+b;
+        };
+        const subtract=(a,b)=>{
+            return a-b;
+        }
+        const calculate=(a,b,fn)=>{
+            return fn(a,b);
+        }
+        ans=calculate(20,30,add);
+        console.log(ans);
+        ans=calculate(30,20,subtract);
+        console.log(ans);
+
+    </script>
+
+</body>
+</html>
