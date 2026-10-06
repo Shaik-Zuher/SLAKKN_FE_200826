@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Functions</title>
+
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <h1>JavaScript Functions</h1>
+
+        <nav>
+            <a href="#task1">Tasks</a>
+        </nav>
+    </header>
+
+    <section class="task" id="task1">
+        <h1 style="text-align: center;">
+            Check the Console or press CTRL + SHIFT + J
+        </h1>
+    </section>
+
+    <script>
+        //Task1
+        let salary=20000;
+        salary=25000;
+        console.log(salary);
+        //task2
+        const country="India";
+        console.log(`My country is ${country}`);
+
+        //Task3
+        let n = "Arun";
+        let a = 25;
+        console.log(`My name is ${n} and I am ${a} years old.`)
+        //task4
+        let price = 500;
+        let quantity = 4;
+        console.log(`Total Price = ${price*quantity}`);
+        //Task5
+        function greet(name="Guest"){
+            return `Welcome ${name}`;
+        }
+        console.log(greet("Arun"))
+        console.log(greet());
+
+        //Task6
+        const colors = ["red", "green", "blue"];
+
+        const [firstColor, secondColor, thirdColor] = colors;
+
+        console.log(firstColor);  // "red"
+        console.log(secondColor); // "green"
+        console.log(thirdColor);  // "blue"
+
+        //Task7
+        const student = {
+            name: "Arun",
+            age: 20,
+            city: "Chennai"
+            };
+        const {name,age,city}=student;
+        console.log(name)
+        console.log(age);
+        console.log(city);
+
+        //Task8
+        const numbers = [10, 20, 30];
+        let copy=[...numbers,40,50]
+        console.log(copy);
+
+        //Task9
+        const showNumbers=(...arr)=>{
+            console.log(arr)
+        }
+        showNumbers(10,20,30,40);
+
+        //Task10
+        const add=(a,b)=>{
+            return a+b;
+        }
+        console.log(add(10,20));
+        
+    </script>
+
+</body>
+</html>
