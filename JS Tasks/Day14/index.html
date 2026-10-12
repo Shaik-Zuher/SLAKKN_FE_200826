@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dom Form Handling</title>
+
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <h1>Dom Form Handling</h1>
+
+        <nav>
+            <a href="#task1">Tasks</a>
+        </nav>
+    </header>
+
+    <section class="task" id="task1">
+        <h1 style="text-align: center;">
+            Check the Console or press CTRL + SHIFT + J
+        </h1>
+    </section>
+
+    <script>
+        //Task1
+        let name="Arun";
+        var age=25;
+        const completed=true;
+        console.log(name,age,completed);
+        //task2
+        let salary=15000;
+        salary+=5000;
+        console.log("updates salary",salary);
+
+        //Task3
+        let n = 25;
+        if(n%2==1){
+            console.log("Odd");
+        }
+        else{
+            console.log("Even");
+            
+        }
+        //task4
+        let price = undefined;
+        console.log(`Type of ${name} is ${typeof(name)}`);
+        console.log(`Type of ${age} is ${typeof(age)}`);
+        console.log(`Type of ${completed} is ${typeof(completed)}`);
+        console.log(`Type of ${price} is ${typeof(price)}`);
+        //Task5
+        let a=10;
+        let b=20;
+        console.log("Before Swapping",a,b);
+        var temp=a;
+        a=b;
+        b=temp;
+        console.log("After Swapping",a,b);
+        
+
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DOM Events</title>
+
+    <link rel="stylesheet" href="../assets/styles.css">
+    <style>
+        h1{
+            text-align: center;
+            border-bottom: 3px solid black;
+        }
+        div{
+            margin:auto;
+            height:100px;
+            width:200px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+        }
+        .light{
+            background-color: white;
+            color:black;
+        }
+        .dark{
+            background-color: black;
+            color:white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <h1 style="border:none">DOM Events</h1>
+
+        <nav>
+            <a href="#task1">Task1</a>
+            <a href="#task2">Task2</a>
+            <a href="#task3">Task3</a>
+            <a href="#task4">Task4</a>
+            <a href="#task5">Task5</a>
+
+        </nav>
+    </header>
+
+    <section class="task" id="task1">
+        <h1>Task 1 - Change Heading Color</h1>
+        <div>
+            <h1 style="border:none" id="title">
+            Hello World
+            </h1>
+            <button class="btn"> Click Me</button>
+        </div>
+        
+    </section>
+
+    <section class="task" id="task2">
+        <h1>Task 2 - Change Box Background</h1>
+        <div id="box"> <p style="text-align: center;">This is box</p>
+            <div style="flex-direction: row;   justify-content: space-around;">
+                <button class="btn"> Button1</button>
+                <button class="btn"> Button2</button>
+            </div>
+            
+        </div>
+    </section>
+    <section class="task" id="task3">
+        <h1>Task 3 - Show and Hide</h1>
+        <div>
+            <p style="text-align: center;" id="para" >Hiding Text</p>
+            <div style="flex-direction: row;   justify-content: space-around;">
+                <button class="btn"> Show</button>
+                <button class="btn"> Hide</button>
+            </div>
+        </div>
+    </section>
+    <section class="task" id="task4">
+        <h1>Task 4 - Toggle Show/Hide</h1>
+        <div>
+            <h1 style="border:none; visibility: visible;" id="t4">
+                Task4
+            </h1>
+            <button class="btn">Hide</button>
+        </div>
+    </section>
+    <section class="task" id="task5">
+        <h1>Task 5 - Dark and Light Mode</h1>
+        <div style="height:200px" class="light" id="toggle">
+            <h1 style="border:none; visibility: visible;" id="t4">
+                Task5
+            </h1>
+            <p style="text-align: center;">This is some text</p>
+            <button class="btn">Toggle</button>
+        </div>
+    </section>
+    <script>
+        const heading=document.getElementById("title");
+        const btn=document.getElementsByClassName("btn");
+        const box=document.getElementById("box");
+        const para=document.getElementById("para");
+        const t4=document.getElementById("t4");
+        const dark=document.querySelector("#toggle");
+        box.style.backgroundColor="white";
+        btn[0].addEventListener("click",(e)=>{
+            heading.style.color="red";
+            heading.style.fontSize="30px";
+            btn[0].textContent="Showing";
+        })
+        btn[1].addEventListener("click",(e)=>{
+            box.style.backgroundColor="blue";
+            box.style.color="white";
+        })
+        btn[2].addEventListener("click",(e)=>{
+            box.style.backgroundColor="yellow";
+            box.style.color="black";
+        })
+        btn[3].addEventListener("click",(e)=>{
+            para.style.visibility="visible";
+        })
+        btn[4].addEventListener("click",(e)=>{
+            para.style.visibility="hidden";
+
+        })
+        btn[5].addEventListener("click",(e)=>{
+            if(t4.style.visibility==="visible"){
+                t4.style.visibility="hidden";
+                btn[5].innerText="Show";
+            }
+            else{
+                t4.style.visibility="visible";
+                btn[5].innerText="Hide";
+            }
+        })
+        btn[6].addEventListener("click",(e)=>{
+            dark.classList.toggle("dark");
+        })
+        
+    </script>
+
+
+</body>
+</html>
