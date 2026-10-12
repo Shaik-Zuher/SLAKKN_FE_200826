@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DOM</title>
+
+    <link rel="stylesheet" href="../assets/styles.css">
+    <style>
+        h1{
+            text-align: center;
+            border-bottom: 3px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <h1 style="border:none">DOM</h1>
+
+        <nav>
+            <a href="#task1">Task1</a>
+            <a href="#task2">Task2</a>
+            <a href="#task3">Task3</a>
+            <a href="#task4">Task4</a>
+            <a href="#task5">Task5</a>
+
+        </nav>
+    </header>
+
+    <section class="task" id="task1">
+        <h1>Task 1 - Change Heading Text</h1>
+        <h1 style="border:none" id="title">
+            Hello World
+        </h1>
+    </section>
+
+    <section class="task" id="task2">
+        <h1>Task 2 - Change Paragraph Styles</h1>
+
+        <p class="same">Para1</p>
+        <p class="same">Para2</p>
+        <p class="same">Para3</p>
+    </section>
+    <section class="task" id="task3">
+        <h1>Task 3 - Update Image and Link</h1>
+        <img alt="not_avalible" loading="lazy" src="" id="image">
+        <a href="" id="link"> Google</a>
+    </section>
+    <section class="task" id="task4">
+        <h1>Task 4 - Update Input Properties</h1>
+        <form>
+            <label for="username"> Enter name</label>
+            <input type="text" id="username" value="">
+            <label for="email"> Enter email</label>
+            <input type="email" id="email" value="">
+            <button type="submit" id="btn">Submit</button>
+        </form>
+    </section>
+    <section class="task" id="task5">
+        <h1>Task 5 - Update Multiple Elements</h1>
+
+        <h2></h2>
+        <h2></h2>
+        <h2></h2>
+        <h2></h2>
+        <h2></h2>
+    </section>
+    <script>
+        const heading=document.getElementById("title");
+        const paras=document.getElementsByClassName("same");
+        const image=document.querySelector("#image");
+        const link=document.querySelector("#link");
+        const username=document.getElementById("username");
+        const email=document.querySelector("#email");
+        const btn=document.getElementById("btn");
+        const tags=document.getElementsByTagName("h2");
+        heading.textContent="Welcome to Javacript";
+        heading.style.color="blue";
+        heading.style.fontSize="30px";
+        paras[0].style.color="red";
+        paras[1].style.color="yellow";
+        paras[2].style.fontSize="25px";
+        image.src="../../HTML Tasks/Day7/assets/images/1.png";
+        image.style.width="200px";
+        image.style.margin="0% 50%";
+        link.href="https://www.google.com";
+        link.textContent="Visit Google";
+
+        username.value="Arun";
+        email.value="arun@gmail.com";
+        btn.disabled=true;
+
+        tags[0].innerText="HTML";
+        tags[1].innerText="CSS";
+        tags[2].innerText="JS";
+        tags[3].innerText="React";
+        tags[4].innerText="Node.js"
+    </script>
+
+
+</body>
+</html>

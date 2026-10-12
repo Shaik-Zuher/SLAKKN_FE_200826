@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CallBack Promises</title>
+
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <h1>CallBack and Promises</h1>
+
+        <nav>
+            <a href="#task1">Tasks</a>
+        </nav>
+    </header>
+
+    <section class="task" id="task1">
+        <h1 style="text-align: center;">
+            Check the Console or press CTRL + SHIFT + J
+        </h1>
+    </section>
+
+    <script>
+        let numbers = [10, 20, 30, 40, 50];
+        numbers=numbers.map(function(x){return 2*x});
+        console.log(numbers);
+
+        numbers = [10, 15, 20, 25, 30, 35, 40];
+        numbers=numbers.filter((e)=>{if(e%2==0){return e}});
+        console.log(numbers);
+
+        numbers = [10, 25, 35, 50, 60];
+        console.log(numbers.find((e)=>{if(e>30){return e}}));
+
+        let students = [{ id: 1, name: "Arun", mark: 75 },{ id: 2, name: "Priya", mark: 90 },{ id: 3, name: "Kumar", mark: 65 }];
+        console.log(students.find(function(x){if(x["id"]==2){return x}}));
+
+        let employees = [
+                        { name: "Arun", salary: 25000 },
+
+                        { name: "Priya", salary: 45000 },
+
+                        { name: "Kumar", salary: 30000 },
+
+                        { name: "Ravi", salary: 50000 }
+
+                        ];
+        console.log(employees.filter((e)=>{
+            if(e["salary"]>=30000){
+                return e;
+            }
+        }))
+        console.log(employees.map((e)=>{return e.name}));
+
+        let prices = [100, 200, 300, 400];
+        console.log(prices.reduce((e,f)=>{return e+f},0));
+
+        let marks = [75, 80, 35, 90, 65];
+        console.log(marks.some(function(a){return a<40}));
+        console.log(marks.every((e)=>{return e>=35}));
+
+        let skills = ["HTML","CSS","JavaScript","React"];
+        for(var i of skills){
+            console.log(i);
+        }
+        let student = {
+
+                name: "Arun",
+
+                age: 21,
+
+                course: "JavaScript",
+
+                city: "Chennai"
+
+                };
+        
+        for(var i in student){
+            console.log(i,student[i]);
+        }
+        
+    </script>
+
+
+</body>
+</html>
