@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DOM Form Handling</title>
+
+    <link rel="stylesheet" href="../assets/styles.css">
+    <style>
+        h1{
+            text-align: center;
+            border-bottom: 3px solid black;
+        }
+        div{
+            background-color:#2E7D32;
+            margin:auto;
+            height:300px;
+            width:400px;
+            border-radius: 10px;
+        }
+        article{
+            display: none;
+            margin:20px auto;
+            text-align: center;
+        }
+        .display{
+            display: block;
+        }
+        form{
+            padding: 10px;
+            height: 100%;
+            width:100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap:10px;
+        }
+        fieldset{
+            height: 70%;
+            display: flex;
+            flex-direction: inherit;
+            align-items:center;
+            justify-content: space-evenly;
+            gap:5px;
+            color:white;
+            border-radius: 10px;
+        }
+        label{
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+            gap:5px;
+            width:100%;
+
+        }
+        input,button{
+            padding: 10px;
+            width:50%;
+            border-radius: 5px;
+            border:none;
+        }
+        button{
+            width:100px;
+            cursor: pointer;
+        }
+        table,td,th{
+            border:1px solid black;
+            border-collapse: collapse;
+            padding:8px;
+        }
+        table{
+            width:100%;
+        }
+        thead{
+            background-color: #2E7D32;
+            color: white;
+        }
+        tbody{
+            background-color:whitesmoke;
+        }
+        select{
+            width:50%;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <h1 style="border:none">DOM Handling</h1>
+
+        <nav>
+            <a href="#task1">Task1</a>
+            <a href="#task2">Task2</a>
+        </nav>
+    </header>
+
+    <section class="task" id="task1">
+        <h1>Task 1 - Employee Registration Form</h1>
+        <div>
+            <form action="" id="form">
+                <fieldset>
+                    <label for="name">Enter your name
+                    <input type="text" name="name" id="name" value="" required>
+                    </label>
+                    <label for="age">Enter your age
+                        <input type="number" name="age" id="age" value="" required>
+                    </label>
+                    <label for="email">Enter Department
+                        <input type="text" name="dept" id="dept" value="" required>
+                    </label>
+                    <label for="salary">Enter Salary
+                        <input type="number" name="salary" id="salary" value="" required>
+                    </label>
+                    
+                </fieldset>
+                <button id="btn" type="submit">Register</button>
+                <button id="records" type="button">Show Records</button>
+            </form>
+        </div>
+        <article>
+            <table>
+                <caption>Records</caption>
+                <thead>
+                    <tr><th>S.No</th>
+
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Department</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+                <tbody id="body">
+                </tbody>
+            </table>
+        </article>
+    </section>
+
+    <section class="task" id="task2">
+        <h1>Task 2 - Simple Calculator</h1>
+        <form id="calculator">
+            <fieldset style="width:50%; background-color: grey;">
+                <label for="first">Enter a
+                    <input type="number" name="" id="first">
+                </label>
+                <label for="second">Enter b
+                    <input type="number" name="" id="second">
+                </label>
+            </fieldset>
+            <fieldset  style="width:50%; background: grey;">
+                <label for="options"> Select opertion:
+                    <select id="options" name="option_value">
+                    <optgroup>
+                        <option value="">--select</option>
+                        <option value="+">Addition(+)</option>
+                        <option value="-">Subtract(-)</option>
+                        <option value="/">Divide(/)</option>
+                        <option value="*">Mutiply(*)</option>
+                    </optgroup>
+                </select>
+                </label>
+            </fieldset>
+            <button id="submit">Submit</button>
+            <output id="output"></output>
+        </form>
+    </section>
+    
+    
+    <script>
+        const btn=document.getElementById("btn");
+        const records=document.getElementById("records");
+        const submit=document.getElementById("submit");
+        const form=document.getElementById("form");
+        const body=document.getElementById("body");
+        const calculator=document.getElementById("calculator");
+        let data=[];
+        const article=document.getElementsByTagName("article");
+        const render=()=>{
+            if(data.length==0){
+                return;
+            }
+            let prev=data[data.length-1];  
+            body.innerHTML+=`<tr>
+                <td>${data.length}</td>
+                <td>${prev.name}</td>
+                <td>${prev["age"]}</td>
+                <td>${prev["dept"]}</td>
+                <td>${prev.salary}</td>
+                </tr>`;
+            return;
+        }
+        form.addEventListener("submit",(event)=>{
+            event.preventDefault();
+            let name=document.getElementById("name").value.trim();
+            let age=document.getElementById("age").value.trim();
+            age=Number.parseInt(age);
+            let dept=document.getElementById("dept").value.trim();
+            let salary=document.getElementById("salary").value.trim();
+            salary=Number.parseInt(salary)
+            if(salary<0 || age<0){
+                alert("Error enter correct value");
+                return;
+            }
+            let obj={name:name,age:age,dept:dept,salary:salary};
+            data.push(obj);
+            render();
+            form.reset();
+        })
+        records.addEventListener("click",()=>{
+            article[0].classList.toggle("display");
+        })
+        calculator.addEventListener("submit",(e)=>{
+            e.preventDefault();
+            let a=Number(document.getElementById("first").value.trim());
+            let b=Number(document.getElementById("second").value.trim());
+            let options=document.getElementById("options");
+            let output=document.getElementById("output");
+            console.log(options.value)
+            if(options.value==""){
+                output.innerText="Enter valid operation";
+                return;
+            }
+            if(!a){
+                a=0;
+            }
+            if(!b){
+                b=0;
+            }
+            if(options.value=="*"){
+                output.innerText=a*b;
+            }
+            else if(options.value=="-"){
+                output.innerText=a-b;
+            }
+            else if(options.value=="+"){
+                output.innerText=a+b;
+            }
+            else{
+                output.innerText=a/b;
+            }
+            return;
+            
+        })
+
+    </script>
+
+
+</body>
+</html>
