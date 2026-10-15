@@ -15,7 +15,7 @@
         div{
             background-color:#2E7D32;
             margin:auto;
-            height:300px;
+            height:350px;
             width:400px;
             border-radius: 10px;
         }
@@ -38,6 +38,7 @@
             gap:10px;
         }
         fieldset{
+            margin-top:10px;
             height: 70%;
             display: flex;
             flex-direction: inherit;
@@ -124,7 +125,7 @@
             <table>
                 <caption>Records</caption>
                 <thead>
-                    <tr><th>S.No</th>
+                    <tr><th>U.ID</th>
 
                         <th>Name</th>
                         <th>Age</th>
@@ -145,9 +146,14 @@
         const records=document.getElementById("records");
         const form=document.getElementById("form");
         const body=document.getElementById("body");
-        let data=[];
+        const table=document.getElementsByTagName("table")[0];
         const article=document.getElementsByTagName("article");
+        let counter=0;
+        let data=[];
         const render=()=>{
+            if(data.length>0){
+                c=data[data.length-1].userid+1;
+            }
             body.innerHTML="";
             data.forEach(prev => {
                 body.innerHTML+=`<tr>
@@ -156,13 +162,15 @@
                 <td>${prev["age"]}</td>
                 <td>${prev["dept"]}</td>
                 <td>${prev.salary}</td>
-                <td><button style="background-color:red color:white" class="delete" value="${prev.userid}">Delete</button></td>
+                <td><button style="background-color:red; color:white;" id="${prev.userid}">Delete</button></td>
                 </tr>`;
             });
             return;
         }
         document.addEventListener("DOMContentLoaded",()=>{
-            data=JSON.parse(localStorage.getItem("data"));
+            if(localStorage.getItem("data")){
+                data=JSON.parse(localStorage.getItem("data"));
+            }
             render();
             return;
         })
@@ -178,19 +186,47 @@
                 alert("Error enter correct value");
                 return;
             }
-            let obj={userid:new Date(),name:name,age:age,dept:dept,salary:salary};
+            let obj={userid:counter,name:name,age:age,dept:dept,salary:salary};
+            counter+=1;
             data.push(obj);
             localStorage.setItem("data",JSON.stringify(data));
-            render();
+            body.innerHTML+=`<tr>
+                <td>${obj.userid}</td>
+                <td>${obj.name}</td>
+                <td>${obj["age"]}</td>
+                <td>${obj["dept"]}</td>
+                <td>${obj.salary}</td>
+                <td><button style="background-color:red; color:white;" id="${obj.userid}">Delete</button></td>
+                </tr>`;
             form.reset();
         })
         records.addEventListener("click",()=>{
             article[0].classList.toggle("display");
         })
-        document.addEventListener("DOMContentLoaded",()=>{
+        table.addEventListener("click",function(event){
+            let clicked=event.target;
+            let bt_id=clicked.id;
+            var s=0;
+            var e=data.length-1;
+            while(s<=e){
+                var mid=s+Math.floor((e-s)/2);
+                if(data[mid]["id"]<=bt_id){
+                    s=mid+1;
+                }
+                else{
+                    e=mid-1;
+                }
+            }
+            while(s<data.lenght){
+                data[e]=data[s];
+                s++;
+                e++;
+            }
+            console.log(data);
+            data.pop();
+            localStorage.setItem("data",JSON.stringify(data));
             render();
-            return;
-        })
+        });
         
     </script>
 
