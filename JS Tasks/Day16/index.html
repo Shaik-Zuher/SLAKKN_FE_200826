@@ -152,7 +152,7 @@
         let data=[];
         const render=()=>{
             if(data.length>0){
-                c=data[data.length-1].userid+1;
+                counter=data[data.length-1].userid+1;
             }
             body.innerHTML="";
             data.forEach(prev => {
@@ -205,7 +205,7 @@
         })
         table.addEventListener("click",function(event){
             let clicked=event.target;
-            let bt_id=clicked.id;
+            let bt_id=Number(clicked.id);
             var s=0;
             var e=data.length-1;
             while(s<=e){
@@ -217,12 +217,11 @@
                     e=mid-1;
                 }
             }
-            while(s<data.lenght){
+            while(s<data.length){
                 data[e]=data[s];
                 s++;
                 e++;
             }
-            console.log(data);
             data.pop();
             localStorage.setItem("data",JSON.stringify(data));
             render();

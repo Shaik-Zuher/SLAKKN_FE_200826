@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Project</title>
+
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <h1 style="border:none">Login</h1>
+    </header>
+    <main>
+    <section class="div">
+        <div>
+            <h1>Welcome to Login</h1>
+            <form action="" id="form">
+                <fieldset>
+                    <label for="name">Enter your email
+                    <input type="email" name="email" id="email" value="" required>
+                    </label>
+                    <label for="password">Enter your password
+                        <input type="password" name="password" id="password" value="" required>
+                    </label>
+                </fieldset>
+                <button id="btn" type="submit">Login</button>
+            </form>
+            <p style="text-align: center; color:white;">Don't have account? <a id="register">Register</a></p>
+        </div>
+        <div class="register display">
+            <h1>Register</h1>
+            <button type="button" id="close">X</button>
+            <form action="" id="reg_form">
+                <fieldset>
+                    <label for="name">Enter your email
+                    <input type="email" name="email" id="new_email" value="" required>
+                    </label>
+                    <label for="name">Enter your name
+                        <input type="text" name="name" id="new_name" value="" required>
+                    </label>
+                    <label for="password">Enter your password
+                        <input type="password" name="password" id="new_password" value="" required>
+                    </label>
+                </fieldset>
+                <button id="bttn" type="submit">Register</button>
+            </form>
+        </div>
+    </section>
+    </main>
+    <script src="assets/script.js"></script>
+</body>
+</html>
