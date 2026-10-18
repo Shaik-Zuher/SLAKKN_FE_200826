@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fetch Api</title>
+
+    <link rel="stylesheet" href="../assets/styles.css">
+    <style>
+        h1{
+            text-align: center;
+            border-bottom: 3px solid black;
+        }
+        article{
+            margin:20px auto;
+            text-align: center;
+        }
+        img{
+            width:100px;
+            height: 100px;
+        }
+        button{
+            width:100px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            border:none;
+        }
+        table,td,th{
+            border:1px solid black;
+            border-collapse: collapse;
+            padding:8px;
+        }
+        table{
+            width:100%;
+        }
+        thead{
+            background-color: #2E7D32;
+            color: white;
+        }
+        tbody{
+            background-color:whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <h1 style="border:none">Fetch</h1>
+
+        <nav>
+            <a href="#task1">Task1</a>
+        </nav>
+    </header>
+
+    <section class="task" id="task1">
+        <h1>Task 1 - Table from fetch</h1>
+        <article>
+            <table>
+                <caption>Records</caption>
+                <thead>
+                    <tr><th>U.ID</th>
+                        <th>Name</th>
+                        <th>Ingredients</th>
+                        <th>Instructions</th>
+                        <th>Difficulty</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="body">
+                </tbody>
+            </table>
+        </article>
+    </section>
+
+    
+    <script>
+        const body=document.getElementById("body");
+        const table=document.getElementsByTagName("table")[0];
+        const article=document.getElementsByTagName("article");
+        let data=[];
+        const bring=async()=>{
+            let datum=await fetch("https://dummyjson.com/recipes");
+            datum=await datum.json();
+            data=datum["recipes"];
+            await render();
+            return;
+        }
+        const render=()=>{
+            if(data.length==0){
+                return
+            }
+            body.innerHTML="";
+            data.forEach(prev => {
+                body.innerHTML+=`<tr>
+                <td>${prev.id}</td>
+                <td><img src="${prev.image}">${prev.name}</td>
+                <td>${prev["ingredients"]}</td>
+                <td>${prev["instructions"]}</td>
+                <td>${prev.difficulty}</td>
+                <td><button style="background-color:red; color:white;" id="${prev.id}">Delete</button></td>
+                </tr>`;
+            });
+            return;
+        }
+        document.addEventListener("DOMContentLoaded",bring());
+        table.addEventListener("click",function(event){
+            let clicked=event.target;
+            let bt_id=Number(clicked.id);
+            var s=0;
+            var e=data.length-1;
+            while(s<=e){
+                var mid=s+Math.floor((e-s)/2);
+                if(data[mid]["id"]<=bt_id){
+                    s=mid+1;
+                }
+                else{
+                    e=mid-1;
+                }
+            }
+            while(s<data.length){
+                data[e]=data[s];
+                s++;
+                e++;
+            }
+            data.pop();
+            render();
+        });
+        
+    </script>
+
+
+</body>
+</html>
