@@ -18,6 +18,17 @@ const Home=()=>{
                     <Link to="/Day1" target="_blank">Task1 - Basics</Link>
                   </div>
                 </div>
+                
+              </div>
+              <div className="days">
+                <h1>Day 1</h1>
+
+                <div className="tasks">
+                  <div className="highlights">
+                    <Link to="/Day2" target="_blank">Task2 - Basics</Link>
+                  </div>
+                </div>
+                
               </div>
             </section>
           </main>
