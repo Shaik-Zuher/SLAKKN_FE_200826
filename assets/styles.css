@@ -283,6 +283,7 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index:1;
 }
 
 .quick-nav ul {
