@@ -283,7 +283,6 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index:1;
 }
 
 .quick-nav ul {
@@ -303,14 +302,19 @@ nav a:hover {
 .quick-nav li {
     padding: 10px;
     width:100%;
+    
 }
 .quick-nav a{
+    position: relative;
     display: block;
     width:100%;
     text-align: center;
+    z-index:1;
 }
 .quick-nav:hover ul {
     display: flex;
+    z-index:3;
+
 }
 footer{
     margin-top: 17px;
